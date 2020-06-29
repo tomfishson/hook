@@ -2,8 +2,17 @@
 
 <div class="container-log-form">
   <%= simple_form_for @log do |f| %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
+
+    <label for="log_start_time">Starting time</label>
+    <input type="datetime-local" id="log_start_time" name="log[start_time]"
+        value="<%=Time.now.strftime('%Y-%m-%dT%H:%M')%>">
+
+    <br>
+
+    <label for="log_end_time">Ending time</label>
+    <input type="datetime-local" id="log_end_time" name="log[end_time]"
+        value="<%=Time.now.strftime('%Y-%m-%dT%H:%M')%>">
+
     <%= f.input :rating %>
     <%= f.input :observation %>
     <%= f.association :location %>
