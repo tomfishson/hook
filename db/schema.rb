@@ -10,7 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_135521) do
+ActiveRecord::Schema.define(version: 2020_06_29_144529) do
+
+  create_table "catches", force: :cascade do |t|
+    t.integer "weight"
+    t.integer "fish_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "log_id", null: false
+    t.index ["fish_id"], name: "index_catches_on_fish_id"
+    t.index ["log_id"], name: "index_catches_on_log_id"
+  end
+
+  create_table "fish", force: :cascade do |t|
+    t.string "common_name"
+    t.string "scientific_name"
+    t.integer "legal_size"
+    t.integer "legal_weight"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "logs", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer "rating"
+    t.text "observation"
+    t.integer "location_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["location_id"], name: "index_logs_on_location_id"
+    t.index ["user_id"], name: "index_logs_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +65,8 @@ ActiveRecord::Schema.define(version: 2020_06_29_135521) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "catches", "fish"
+  add_foreign_key "catches", "logs"
+  add_foreign_key "logs", "locations"
+  add_foreign_key "logs", "users"
 end
