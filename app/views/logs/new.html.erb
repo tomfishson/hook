@@ -1,0 +1,12 @@
+<h1>New Log</h1>
+
+<div class="container-log-form">
+  <%= simple_form_for @log do |f| %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+    <%= f.input :rating %>
+    <%= f.input :observation %>
+    <%= f.association :location %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
