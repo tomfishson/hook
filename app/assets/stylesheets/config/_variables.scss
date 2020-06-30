@@ -1,0 +1,11 @@
+// Color Scheme
+$dark-blue: #010038;
+$intense-blue: #293A80;
+$orange: #F39422;
+
+// Font Nunito & Roboto
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto:wght@300;400;700&display=swap');
+
+// Now you can add the font-family for you body and headers like below:
+$base-font: 'Nunito', sans-serif;
+$header-font: 'Roboto', sans-serif;
