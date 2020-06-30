@@ -1,7 +1,16 @@
 <h1>Fishes#index</h1>
 <p>Find me in app/views/fishes/index.html.erb</p>
-<% @fishes.each do |fish|  %>
-<%= fish.name %>
-<%= fish.image %>
 
-<% end %>
+
+
+  <% @fishes.each do |fish|  %>
+
+    <li>
+      <li><%= fish.common_name %></li>
+      <li><%= fish.scientific_name  %></li>
+      <li><%= fish.legal_size %></li>
+      <li><%= fish.legal_weight %></li>
+      <li><%= fish.description %></li>
+      <% end %>
+    </li>
+
