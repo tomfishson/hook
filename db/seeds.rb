@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+# User
 Laure = User.create(email: "laure@gmail.com", password: "123456")
 
+#Fishes
 Fish.create(common_name: 'Yellow Fin Tuna', scientific_name: 'Thunnus albacares', legal_weight: 2.7, legal_size: 0, description: 'Live in shoals near the surface, however, sometimes make short dives to depths exceeding 500 m, looking for food like squid, crustaceans and a variety of fish. The reproductive peak occurs in the summer.')
 
 Fish.create(common_name: 'Bluemouth', scientific_name: 'Helicolenus dactylopterus', legal_weight: 0, legal_size: 0, description: 'It dwells on the seabed between 200-1,000 m, often around underwater wrecks. It is a solitary species and aggregate only at the time of reproduction, which occurs in summer. It feeds on fish, crustaceans and some cephalopods.')
