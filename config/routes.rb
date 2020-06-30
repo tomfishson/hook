@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :logs
+  resources :logs do
+    resources :catches, only: [:show, :create]
+  end
+
   resources :fishes, only: [:index]
 end
