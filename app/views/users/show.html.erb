@@ -1,9 +1,8 @@
-hello
-<%= current_user.email%>
-<br>
-<br>
-<div class="container">
-<%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
-<%= link_to "Prediction", "#", class: "btn btn-flat" %>
-<%= link_to "Catch", "#", class: "btn btn-flat" %>
+<div class="banner">
+  <div class="banner-content text-center">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+    <h1><%= current_user.email%></h1>
+    <%= link_to "Prediction", "#", class: "btn btn-flat" %>
+    <%= link_to "Catch", "#", class: "btn btn-flat" %>
+  </div> 
 </div>
