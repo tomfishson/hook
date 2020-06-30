@@ -8,10 +8,14 @@ class LogsController < ApplicationController
     @log.user = current_user
 
     if @log.save
-      redirect_to logs_path
+      redirect_to log_path(@log)
     else
       render 'logs/new'
     end
+  end
+
+  def show
+    @log = Log.find(params[:id])
   end
 
   private
