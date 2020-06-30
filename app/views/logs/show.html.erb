@@ -2,6 +2,17 @@
 
 <p><%= "From #{@log.start_time} to #{@log.end_time}" %></p>
 
-<p><%= "Rating of #{@log.rating}" %></p>
+<p><%= "Rating: #{@log.rating}" %></p>
 
 <p><%= "Observations: #{@log.observation}" %></p>
+
+<h2>Catches</h2>
+
+<ul>
+  <% @log.catches.each do |catch| %>
+    <li>
+      <%= catch.fish.common_name %>
+      <%= catch.weight %>
+    </li>
+  <% end %>
+</ul>
