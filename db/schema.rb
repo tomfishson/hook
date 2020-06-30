@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_144529) do
+ActiveRecord::Schema.define(version: 2020_06_30_000335) do
 
   create_table "catches", force: :cascade do |t|
     t.integer "weight"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_06_29_144529) do
     t.string "common_name"
     t.string "scientific_name"
     t.integer "legal_size"
-    t.integer "legal_weight"
+    t.float "legal_weight"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
